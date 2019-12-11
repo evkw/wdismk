@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit, HostListener, ViewChild } from '@angu
 import { MapComponent as MapBoxGlComponent } from 'ngx-mapbox-gl';
  
 @Component({
-  selector: 'evan-dev-map',
+  selector: 'mb-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })

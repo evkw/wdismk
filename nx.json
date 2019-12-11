@@ -22,6 +22,9 @@
     },
     "mapbox": {
       "tags": []
+    },
+    "ui-components": {
+      "tags": []
     }
   }
 }

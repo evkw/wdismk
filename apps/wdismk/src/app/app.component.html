@@ -1,3 +1,28 @@
-
-<div>Message: {{ hello$ | async | json }}</div>
-<evan-dev-map></evan-dev-map>
+<div class="bg-gray-200 antialiased">
+    <ui-comp-header-one></ui-comp-header-one>
+    <section class="flex justify-between bg-gray-800 px-4 py-3">
+        <div class="relative">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+                <svg class="h-6 w-6 fill-current text-gray-600" width="24" height="24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.32 14.9l1.1 1.1c.4-.02.83.13 1.14.44l3 3a1.5 1.5 0 01-2.12 2.12l-3-3a1.5 1.5 0 01-.44-1.14l-1.1-1.1a8 8 0 111.41-1.41l.01-.01zM10 16a6 6 0 100-12 6 6 0 000 12z" />
+                    </svg>
+            </div>
+            <input
+                class="bg-gray-900 text-white rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:bg-white focus:text-gray-900"
+                placeholder="Search for keywords" />
+        </div>
+        <button class="inline-flex bg-gray-700 rounded-lg shadow pr-4 pl-3 hover:bg-gray-600 focus:outline-none focus:shadow-outline">
+            <div>
+                <svg class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24">
+                    <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z" />
+                    <path d="M0 0h24v24H0z" fill="none" /></svg>
+            </div>
+            <span class="m1-1 text-white font-medium">Filters</span>
+        </button>
+    </section>
+    <main class="bg-gray-200"></main>
+    <!-- <mb-map></mb-map> -->
+</div>
