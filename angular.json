@@ -13,8 +13,12 @@
       "prefix": "evan-dev",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
+            "customWebpackConfig": {
+              "path": "./tools/builders/with-tailwind.config.js",
+              "replaceDuplicatePlugins": true
+            },
             "outputPath": "dist/apps/wdismk",
             "index": "apps/wdismk/src/index.html",
             "main": "apps/wdismk/src/main.ts",
@@ -22,7 +26,7 @@
             "tsConfig": "apps/wdismk/tsconfig.app.json",
             "aot": false,
             "assets": ["apps/wdismk/src/favicon.ico", "apps/wdismk/src/assets"],
-            "styles": ["apps/wdismk/src/styles.scss"],
+            "styles": ["tools/tailwind.scss", "apps/wdismk/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -54,18 +58,31 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "local": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/wdismk/src/environments/environment.ts",
+                  "with": "apps/wdismk/src/environments/environment.local.ts"
+                }
+              ]
             }
           }
         },
         "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
+          "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "browserTarget": "wdismk:build",
             "proxyConfig": "apps/wdismk/proxy.conf.json"
           },
+          "browserTarget": "wdismk:build",
+          "proxyConfig": "apps/wdismk/proxy.conf.json",
           "configurations": {
             "production": {
               "browserTarget": "wdismk:build:production"
+            },
+            "local": {
+              "browserTarget": "wdismk:build:local"
             }
           }
         },
@@ -198,6 +215,37 @@
             "jestConfig": "libs/api-interfaces/jest.config.js",
             "tsConfig": "libs/api-interfaces/tsconfig.spec.json"
           }
+        }
+      }
+    },
+    "mapbox": {
+      "projectType": "library",
+      "root": "libs/mapbox",
+      "sourceRoot": "libs/mapbox/src",
+      "prefix": "evan-dev",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/mapbox/tsconfig.lib.json",
+              "libs/mapbox/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/mapbox/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/mapbox/jest.config.js",
+            "tsConfig": "libs/mapbox/tsconfig.spec.json",
+            "setupFile": "libs/mapbox/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
         }
       }
     }

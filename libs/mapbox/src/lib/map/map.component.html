@@ -1,0 +1,36 @@
+<div class="container mx-auto">
+    <mgl-map [style]="'mapbox://styles/mapbox/streets-v9'" [zoom]="[2]"
+        [center]="[-10, 90]" (mouseMove)="onMouseMove($event)">
+        <ng-container *ngIf="earthquakes">
+                <mgl-geojson-source
+                  #clusterComponent
+                  id="earthquakes"
+                  [data]="earthquakes"
+                  [cluster]="true"
+                  [clusterRadius]="50"
+                  [clusterMaxZoom]="14"
+                ></mgl-geojson-source>
+                <mgl-markers-for-clusters
+                  source="earthquakes"
+                >
+                  <ng-template mglPoint let-feature>
+                    <div
+                      class="marker"
+                      [title]="feature.properties['name']"
+                    >
+                      {{ feature.properties?.point_count }}
+                    </div>
+                  </ng-template>
+                  <ng-template mglClusterPoint let-feature>
+                    <div
+                      class="marker-cluster"
+                      (click)="selectCluster($event, feature)"
+                    >
+                      {{ feature.properties?.point_count }}
+                    </div>
+                  </ng-template>
+                </mgl-markers-for-clusters>
+                
+              </ng-container>
+    </mgl-map>
+</div>

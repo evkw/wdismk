@@ -16,7 +16,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@evan-dev/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@evan-dev/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@evan-dev/mapbox": ["libs/mapbox/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
