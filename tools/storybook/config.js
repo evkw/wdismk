@@ -1,6 +1,13 @@
 import { configure, addParameters } from '@storybook/angular';
 
 const newViewports  = {
+    xs: {
+        name: 'xs',
+        styles: {
+            width: '375px',
+            height: '100%',
+        }
+    },
     sm: {
         name: 'sm',
         styles: {
