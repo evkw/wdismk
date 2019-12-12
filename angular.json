@@ -26,7 +26,7 @@
             "tsConfig": "apps/wdismk/tsconfig.app.json",
             "aot": false,
             "assets": ["apps/wdismk/src/favicon.ico", "apps/wdismk/src/assets"],
-            "styles": ["tools/tailwind.scss", "apps/wdismk/src/styles.scss"],
+            "styles": ["tools/tailwind/tailwind.scss", "apps/wdismk/src/styles.scss"],
             "scripts": []
           },
           "configurations": {

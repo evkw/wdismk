@@ -1,0 +1,11 @@
+{
+    "extends": "../../tsconfig.json",
+    "exclude": [
+        "../../apps/**/*.spec.ts",
+        "../../apps/wdismk-e2e/**/*"
+    ],
+    "include": [
+        "../../apps/**/*",
+        "../../libs/**/*",
+    ]
+}
