@@ -1,0 +1,115 @@
+<section class="bg-gray-800">
+    <div class="flex justify-between px-4 py-3">
+        <div class="w-full relative">
+            <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+                <svg class="h-6 w-6 fill-current text-gray-600" width="24" height="24" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M16.32 14.9l1.1 1.1c.4-.02.83.13 1.14.44l3 3a1.5 1.5 0 01-2.12 2.12l-3-3a1.5 1.5 0 01-.44-1.14l-1.1-1.1a8 8 0 111.41-1.41l.01-.01zM10 16a6 6 0 100-12 6 6 0 000 12z" />
+                </svg>
+            </div>
+            <input
+                class="block w-full bg-gray-900 text-white rounded-lg pl-10 pr-4 py-2 focus:outline-none focus:bg-white focus:text-gray-900"
+                placeholder="Search for keywords" />
+        </div>
+        <button (click)="toggle()"
+            class="ml-4 inline-flex bg-gray-700 rounded-lg shadow pr-4 pl-3 hover:bg-gray-600 focus:outline-none focus:shadow-outline">
+            <div>
+                <svg class="h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24">
+                    <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z" />
+                    <path d="M0 0h24v24H0z" fill="none" /></svg>
+            </div>
+            <span class="m1-1 text-white font-medium">Filters</span>
+        </button>
+    </div>
+
+    <form *ngIf="isOpen">
+        <div class="px-4 py-4 border-t border-gray-900 sm:flex sm:-mx-2">
+            <div class="flex -mx-2 sm:w-1/2 sm:mx-0">
+                <label class="block w-1/2 px-2">
+                    <span class="text-sm font-semibold text-gray-500">Bedrooms</span>
+                    <select class="mt-1 form-select block w-full shadow text-white">
+                        <option>4</option>
+                    </select>
+                </label>
+
+                <label class="block w-1/2 px-2">
+                    <span class="text-sm font-semibold text-gray-500">Bathrooms</span>
+                    <select class="mt-1 form-select block w-full shadow text-white">
+                        <option>2</option>
+                    </select>
+                </label>
+            </div>
+            <div class="mt-4 sm:w-1/2 sm:mt-0 sm:px-2">
+                <label>
+                    <span class="text-sm font-semibold text-gray-500">Price Range</span>
+                    <select class="mt-1 form-select block w-full shadow text-white">
+                        <option>Up to $2,000/wk</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <div class="px-4 py-4 border-t border-gray-900">
+            <span class="block text-sm font-semibold text-gray-500">Property Type</span>
+            <div class="sm:flex sm:-mx-2">
+                <label class="mt-3 sm:w-1/4 sm:px-2 flex items-center">
+                    <input type="radio" class="form-radio text-indigo-500" name="propertyType" value="house" />
+                    <span class="ml-2 text-white">House</span>
+                </label>
+                <label class="mt-3 sm:w-1/4 sm:px-2 flex items-center">
+                    <input type="radio" class="form-radio text-indigo-500" name="propertyType" value="apartment" />
+                    <span class="ml-2 text-white">Apartment</span>
+                </label>
+                <label class="mt-3 sm:w-1/4 sm:px-2 flex items-center">
+                    <input type="radio" class="form-radio text-indigo-500" name="propertyType" value="loft" />
+                    <span class="ml-2 text-white">Loft</span>
+                </label>
+                <label class="mt-3 sm:w-1/4 sm:px-2 flex items-center">
+                    <input type="radio" class="form-radio text-indigo-500" name="propertyType" value="townhouse" />
+                    <span class="ml-2 text-white">Townhouse</span>
+                </label>
+            </div>
+        </div>
+
+        <div class="px-4 py-4 border-t border-gray-900">
+            <span class="text-sm font-semibold text-gray-500">Amenities</span>
+            <div class="sm:flex sm:-mx-2 sm:flex-wrap">
+                <label class="mt-3 flex items-center sm: w-1/4 sm:px-2">
+                    <input type="checkbox" class="form-checkbox text-indigo-500" name="balcony" />
+                    <span class="text-white ml-2">Balcony</span>
+                </label>
+                <label class="mt-3 flex items-center sm:w-1/4 sm:px-2">
+                    <input type="checkbox" class="form-checkbox text-indigo-500" name="airConditioning" />
+                    <span class="text-white ml-2">Air Con</span>
+                </label>
+                <label class="mt-3 flex items-center sm:w-1/4 sm:px-2">
+                    <input type="checkbox" class="form-checkbox text-indigo-500" name="pool" />
+                    <span class="text-white ml-2">Loft</span>
+                </label>
+                <label class="mt-3 flex items-center sm:w-1/4 sm:px-2">
+                    <input type="checkbox" class="form-checkbox text-indigo-500" name="beach" />
+                    <span class="text-white ml-2">Beach</span>
+                </label>
+                <label class="mt-3 flex items-center sm:w-1/4 sm:px-2">
+                    <input type="checkbox" class="form-checkbox text-indigo-500" name="petFriendly" />
+                    <span class="text-white ml-2">Pet Friendly</span>
+                </label>
+                <label class="mt-3 flex items-center sm:w-1/4 sm:px-2">
+                    <input type="checkbox" class="form-checkbox text-indigo-500" name="kidFriendly" />
+                    <span class="text-white ml-2">Kid Friendly</span>
+                </label>
+                <label class="mt-3 flex items-center sm:w-1/4 sm:px-2">
+                    <input type="checkbox" class="form-checkbox text-indigo-500" name="parking" />
+                    <span class="text-white ml-2">Parking</span>
+                </label>
+            </div>
+        </div>
+        <div class="bg-gray-900 px-4 py-4">
+            <button
+                class="block w-full bg-indigo-500 hover:bg-indigo-400 font-semibold text-white px-4 py-2 rounded-lg">Update
+                results</button>
+        </div>
+    </form>
+</section>

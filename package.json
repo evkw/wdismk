@@ -44,6 +44,7 @@
     "@nestjs/core": "^6.8.3",
     "@nestjs/platform-express": "^6.8.3",
     "@nrwl/angular": "8.9.0",
+    "@tailwindcss/custom-forms": "^0.2.1",
     "core-js": "^2.5.4",
     "mapbox-gl": "^0.54.0",
     "ngx-mapbox-gl": "^4.3.0",
